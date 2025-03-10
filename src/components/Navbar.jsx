@@ -96,8 +96,8 @@ const variants = {
           transition={{ duration: 0.5 }}
           className="text-xl font-bold flex items-center gap-2 py-6 px-4"
         >
-          <span className="text-white">IRON</span>
-          <span className="text-purple-500">CODING</span>
+          <span className="text-white">Soumojit</span>
+          <span className="text-purple-500">Makar</span>
         </motion.div>
       </div>
     </div>
