@@ -80,7 +80,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-lg font-medium text-purple-500">LinkedIn</p>
-              <a href="https://github.com/https://www.linkedin.com/in/soumojit-makar-a9a119304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-white">Soumojit Makar</a>
+              <a href="https://www.linkedin.com/in/soumojit-makar-a9a119304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-white">Soumojit Makar</a>
             </div>
           </motion.div>
           <motion.div

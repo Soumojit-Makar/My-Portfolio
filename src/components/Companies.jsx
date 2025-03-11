@@ -11,6 +11,12 @@ const Companies = () => {
     "Redis",
     "RabbitMQ",
     "GraphQL",
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "PHP",
+    "C / C++",
   ];
 
   const techList = [...technologies, ...technologies];
