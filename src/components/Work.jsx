@@ -54,7 +54,7 @@ const Work = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div id="work" className="py-8 mt-4">
+    <div id="work" className="py-8 mt-4 cursor-pointer">
       <div className=" mx-auto px-8 ">
         <motion.h2
           ref={ref}
