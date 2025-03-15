@@ -10,7 +10,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-4xl font-bold"
+          className="text-4xl font-bold cursor-pointer"
         >
           Let's Discuss Your <span className="text-purple-500">Project</span>
         </motion.h2>
@@ -18,7 +18,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-slate-400 mt-4"
+          className="text-slate-400 mt-4 cursor-pointer"
         >
           Let's make something new, different, and meaningful.
         </motion.p>
@@ -35,7 +35,7 @@ const Contact = () => {
               <FaPhone className="text-white w-6 h-6" />
             </div>
             <div>
-              <p className="text-lg font-medium text-purple-500">Call Me</p>
+              <p className="text-lg font-medium text-purple-500 cursor-pointer">Call Me</p>
               <p className="text-white">+91 8250431994</p>
             </div>
           </motion.div>
@@ -50,7 +50,7 @@ const Contact = () => {
               <FaEnvelope className="text-white w-6 h-6" />
             </div>
             <div>
-              <p className="text-lg font-medium text-purple-500">Email</p>
+              <p className="text-lg font-medium text-purple-500 cursor-pointer">Email</p>
               <a href="mailto:soumojitmakar1234@gmail.com" target="_blank" className="text-white">soumojitmakar1234@gmail.com</a>
             </div>
           </motion.div>
@@ -65,7 +65,7 @@ const Contact = () => {
               <FaGithub className="text-white w-6 h-6" />
             </div>
             <div>
-              <p className="text-lg font-medium text-purple-500">Github</p>
+              <p className="text-lg font-medium text-purple-500 cursor-pointer">Github</p>
               <a href="https://github.com/Soumojit-Makar" target="_blank" className="text-white">Soumojit-Makar</a>
             </div>
           </motion.div>
@@ -79,7 +79,7 @@ const Contact = () => {
               <FaLinkedin className="text-white w-6 h-6" />
             </div>
             <div>
-              <p className="text-lg font-medium text-purple-500">LinkedIn</p>
+              <p className="text-lg font-medium text-purple-500 cursor-pointer">LinkedIn</p>
               <a href="https://www.linkedin.com/in/soumojit-makar-a9a119304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-white">Soumojit Makar</a>
             </div>
           </motion.div>
@@ -93,7 +93,7 @@ const Contact = () => {
               <FaDiscord className="text-white w-6 h-6" />
             </div>
             <div>
-              <p className="text-lg font-medium text-purple-500">Discord</p>
+              <p className="text-lg font-medium text-purple-500 cursor-pointer">Discord</p>
               <a href="https://discord.com/users/mr.soumojitmakar" target="_blank" className="text-white">Soumojit-Makar</a>
             </div>
           </motion.div>

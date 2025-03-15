@@ -37,7 +37,7 @@ const Services = () => {
   });
 
   return (
-    <div id='services' className="text-white py-4">
+    <div id='services' className="text-white py-4 cursor-pointer">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}

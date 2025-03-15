@@ -35,15 +35,15 @@ const variants = {
         transition={{ duration: 0.5 }}
         className="container mx-auto hidden md:flex justify-between items-center py-6"
       >
-        <div className="text-xl lg:text-2xl font-bold flex items-center gap-1">
-          <span className="text-white">Soumojit</span>
-          <span className="text-purple-500">Makar</span>
+        <div className="text-xl lg:text-2xl font-bold flex items-center gap-1 cursor-pointer">
+          <span className="text-white cursor-pointer">Soumojit</span>
+          <span className="text-purple-500 cursor-pointer">Makar</span>
         </div>
         <div>
           <ul className="hidden md:flex items-center space-x-6 list-none lg:text-lg md:text-base text-white">
             {items.map(({ id, text, to }) => (
-              <li key={id}>
-                <Link to={to} smooth={true} duration={500} offset={-70}>
+              <li key={id} className="cursor-pointer">
+                <Link to={to} smooth={true} duration={500} offset={-70} >
                   {text}
                 </Link>
               </li>
@@ -94,7 +94,7 @@ const variants = {
           initial={{ opacity: 0, x: 100, y: -100 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xl font-bold flex items-center gap-2 py-6 px-4"
+          className="text-xl font-bold flex items-center gap-2 py-6 px-4 cursor-pointer"
         >
           <span className="text-white">Soumojit</span>
           <span className="text-purple-500">Makar</span>

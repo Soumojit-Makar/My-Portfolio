@@ -64,7 +64,7 @@ const Companies = () => {
             {techList.map((tech, index) => (
               <div
                 key={index}
-                className="text-lg bg-gray-800 px-6 py-3 rounded-full inline-block border border-purple-500  shadow-blue-400 shadow-inner"
+                className="text-lg bg-gray-800 px-2 py-3 rounded-full inline-block border border-purple-500  shadow-blue-400 shadow-inner"
               >
                 {tech}
               </div>

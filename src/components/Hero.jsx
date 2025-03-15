@@ -48,7 +48,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="text-4xl md:text-5xl flex flex-col gap-4 font-bold mb-4"
+          className="text-4xl md:text-5xl flex flex-col gap-4 font-bold mb-4 cursor-pointer"
         >
           Crafting Scalable & Secure Apps
           <motion.span
@@ -56,7 +56,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-4xl text-purple-300 font-bold text-center mb-12"
+          className="text-4xl text-purple-300 font-bold text-center mb-12 cursor-pointer"
         >
           {typedText}
           <span className="text-purple-500">|</span>
@@ -66,7 +66,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.5 }}
-          className="text-gray-400 text-lg mb-8"
+          className="text-gray-400 text-lg mb-8 cursor-pointer"
         >
           Passionate about building secure, scalable applications with modern web technologies.
         </motion.p>

@@ -16,7 +16,7 @@ const About = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold mb-8 underline"
+          className="text-3xl md:text-4xl font-bold mb-8 underline cursor-pointer"
         >
           About Me
         </motion.h2>
@@ -44,7 +44,7 @@ const About = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="md:w-1/2 text-gray-400 px-4 md:px-0 text-base sm:text-lg md:text-xl "
+            className="md:w-1/2 text-gray-400 px-4 md:px-0 text-base sm:text-lg md:text-xl cursor-pointer"
           >
              As an aspiring Full Stack Web Developer and current BCA student,
              I'm dedicated to mastering Full-end technologies. My academic

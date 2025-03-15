@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Companies from './Companies';
-import project1 from "../assets/project1.png";
+import Companies from "./Companies";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
-import { FaGithub, FaWindows, FaWodu } from 'react-icons/fa';
-import { FaBrave, FaEarthAsia } from 'react-icons/fa6';
-import { ImImage, ImPageBreak } from 'react-icons/im';
+import { FaGithub } from "react-icons/fa";
+import { FaEarthAsia } from "react-icons/fa6";
+import { ImImage } from "react-icons/im";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -52,92 +51,114 @@ const Work = () => {
     },
   ];
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div id='work' className="py-8">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div id="work" className="py-8 mt-4">
+      <div className=" mx-auto px-8 ">
         <motion.h2
           ref={ref}
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          
           className="text-4xl text-white underline font-bold text-center mb-12"
         >
           My Work
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 ">
-          {projects.map((project) => (
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: project.id * 0.2, duration: 0.5 }}
-              key={project.id}
-              className="bg-gray-900  rounded-lg overflow-hidden border-[2px] border-purple-500 shadow-blue-400 shadow-inner scale-100  hover:scale-110 duration-300 transition-transform transform"
-            >
-              {(project.image==null)?
-              <ImImage className="w-full h-48 object-cover mb-4" color='white' />
-              :
-              <img src={project.image} className="w-full h-48 object-cover" alt={project.title} />
-              }
-              
-              
-              <div className="p-6">
-                <h3 className="text-xl text-white font-semibold mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-slate-400 mb-4">{project.description}</p>
-                <button
-                  className="border-2 border-purple-500 text-purple-500 px-4 py-2 rounded-full hover:bg-purple-500 hover:text-white transition"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  Details
-                </button>
-              </div>
-            </motion.div>
-          ))}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {projects.map((project) => {
+            const { ref: projectRef, inView: projectInView } = useInView({
+              triggerOnce: true,
+              threshold: 0.1,
+            });
+
+            return (
+              <motion.div
+                ref={projectRef}
+                initial={{ opacity: 0, y: 50 }}
+                animate={projectInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: project.id * 0.2, duration: 0.5 }}
+                key={project.id}
+                className=" bg-gray-900  rounded-lg overflow-hidden border-2 border-purple-500 shadow-blue-400 shadow-lg scale-100 transform transition-transform duration-700 hover:scale-110 mb-4"
+              >
+                <div className="">
+                {project.image ? (
+                  <img src={project.image} className="w-full h-48 object-cover" alt={project.title} />
+                ) : (
+                  <ImImage className="w-full h-48 object-cover mb-4 text-white" />
+                )}
+
+                <div className="p-6">
+                  <h3 className="text-xl text-white font-semibold mb-2">{project.title}</h3>
+                  <p className="text-slate-400 mb-4">{project.description}</p>
+                  <button
+                    className="border-2 border-purple-500 text-purple-500 px-4 py-2 rounded-full hover:bg-purple-500 hover:text-white transition"
+                    onClick={() => setSelectedProject(project)}
+                  >
+                    Details
+                  </button>
+                </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
+
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 100 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.7, duration: 0.5 }}
       >
-        <Companies/>
+        <Companies />
       </motion.div>
-      
+
       {/* Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 ">
-          <div className="bg-gray-900 p-6 rounded-lg max-w-lg w-full border-t-[5px] border-b-[5px] border-purple-500 shadow-blue-400 shadow-inner">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full"
+        >
+          <div className="bg-gray-900 p-8 rounded-lg max-w-lg w-full border-t-4 border-b-4 border-purple-500 shadow-blue-400 shadow-inner">
             <h2 className="text-2xl text-white font-bold mb-4">{selectedProject.title}</h2>
-            {(selectedProject.image==null)?
-              <ImImage className="w-full h-48 object-cover mb-4" color='white' />
-              :
+
+            {selectedProject.image ? (
               <img src={selectedProject.image} className="w-full h-48 object-cover mb-4" alt={selectedProject.title} />
-            }
+            ) : (
+              <ImImage className="w-full h-48 object-cover mb-4 text-white" />
+            )}
+
             <p className="text-slate-400 mb-4">{selectedProject.description}</p>
-            <p className="text-gray-400 mb-4">{selectedProject.details.split('\n').map((line, index) => (<span key={index}>{line}<br/></span>))}</p>
-            <div className='flex justify-between '>
-            <div className='flex justify-between w-1/2 p-4 items-center'>
-            <a href={selectedProject.livelink} target="_blank" rel="noopener noreferrer" className="mt-4 text-purple-500 underline"><FaEarthAsia size={30}/> </a>
-            <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer" className="mt-4 text-purple-500 underline  "><FaGithub size={30} />  </a>
-            
-            </div>
-            <button
-              className="mt-4  bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition w-1/2 p-4"
-              onClick={() => setSelectedProject(null)}
-            >
-              Close
-            </button>
+            <p className="text-gray-400 mb-4">
+              {selectedProject.details.split("\n").map((line, index) => (
+                <span key={index}>{line}<br /></span>
+              ))}
+            </p>
+
+            <div className="flex justify-between items-center">
+              <div className="flex space-x-4">
+                <a href={selectedProject.livelink} target="_blank" rel="noopener noreferrer" className="text-purple-500">
+                  <FaEarthAsia size={30} />
+                </a>
+                <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer" className="text-purple-500">
+                  <FaGithub size={30} />
+                </a>
+              </div>
+              <button
+                className="bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600 transition"
+                onClick={() => setSelectedProject(null)}
+              >
+                Close
+              </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
