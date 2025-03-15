@@ -50,7 +50,7 @@ const Companies = () => {
   };
 
   return (
-    <div className="text-white py-16">
+    <div className="text-white py-8">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">
           Technologies I Work With
