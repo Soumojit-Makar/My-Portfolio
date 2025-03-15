@@ -5,8 +5,10 @@ import Companies from './Companies';
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
+import project4 from "../assets/project4.png";
 import { FaGithub, FaWindows, FaWodu } from 'react-icons/fa';
 import { FaBrave, FaEarthAsia } from 'react-icons/fa6';
+import { ImImage, ImPageBreak } from 'react-icons/im';
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -17,7 +19,7 @@ const Work = () => {
       title: "Secure File Sharing App",
       description: "A secure and role-based file-sharing application built with Spring Boot, allowing users to upload, share, and access files with controlled permissions.",
       details: "Technologies Used:\n- **Back-end**: Spring Boot (core logic, file handling, expiration management)\n- **Security**: Spring Security (authentication & role-based access control)\n- **API Documentation**: OpenAPI (Swagger) for interactive API documentation\n- **Database**: MySQL (stores user data, file metadata, access permissions)",
-      image: project1,
+      image: null,
       livelink: "#",
       githubLink: "https://github.com/Soumojit-Makar/File-Sharing-Application"
     },
@@ -38,6 +40,15 @@ const Work = () => {
       image: project3,
       livelink: "https://www.soumojitmakar.site",
       githubLink: "https://github.com/Soumojit-Makar/Contact-Manager"
+    },
+    {
+      id: 4,
+      title: "AI-Powered Email Enhancement & Delivery",
+      description: "Welcome to AI Email Assistant, your ultimate solution for crafting professional, error-free, and compelling emails. Built with Spring Boot, this intelligent email sender goes beyond just sending messages—it ensures clarity, correctness, and impact. ",
+      details: "Technologies Used:\n- **Back-end**: Spring Boot (core logic, user authentication, email management)\n- **AI Integration**: DeepSeek-R1 AI (grammar correction, email rewriting)\n- **Email Service**: JavaMailSender (email delivery)\n- **Front-end**: ReactJS, Tailwind CSS",
+      image: project4,
+      livelink: "#",
+      githubLink: "https://github.com/Soumojit-Makar/Email-Sender"
     },
   ];
 
@@ -68,7 +79,13 @@ const Work = () => {
               key={project.id}
               className="bg-gray-900  rounded-lg overflow-hidden border-[2px] border-purple-500 shadow-blue-400 shadow-inner scale-100  hover:scale-110 duration-300 transition-transform transform"
             >
+              {(project.image==null)?
+              <ImImage className="w-full h-48 object-cover mb-4" color='white' />
+              :
               <img src={project.image} className="w-full h-48 object-cover" alt={project.title} />
+              }
+              
+              
               <div className="p-6">
                 <h3 className="text-xl text-white font-semibold mb-2">
                   {project.title}
@@ -99,7 +116,12 @@ const Work = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 ">
           <div className="bg-gray-900 p-6 rounded-lg max-w-lg w-full border-t-[5px] border-b-[5px] border-purple-500 shadow-blue-400 shadow-inner">
             <h2 className="text-2xl text-white font-bold mb-4">{selectedProject.title}</h2>
-            <img src={selectedProject.image} className="w-full h-48 object-cover mb-4" alt={selectedProject.title} />
+            {(selectedProject.image==null)?
+              <ImImage className="w-full h-48 object-cover mb-4" color='white' />
+              :
+              <img src={selectedProject.image} className="w-full h-48 object-cover mb-4" alt={selectedProject.title} />
+            }
+            <p className="text-slate-400 mb-4">{selectedProject.description}</p>
             <p className="text-gray-400 mb-4">{selectedProject.details.split('\n').map((line, index) => (<span key={index}>{line}<br/></span>))}</p>
             <div className='flex justify-between '>
             <div className='flex justify-between w-1/2 p-4 items-center'>

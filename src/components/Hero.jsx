@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import avatar from "../assets/soumojit.png";
+import avatar from "../assets/sm.webp";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
