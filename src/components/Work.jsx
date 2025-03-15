@@ -44,7 +44,7 @@ const Work = () => {
     {
       id: 4,
       title: "AI-Powered Email Enhancement & Delivery",
-      description: "Welcome to AI Email Assistant, your ultimate solution for crafting professional, error-free, and compelling emails. Built with Spring Boot, this intelligent email sender goes beyond just sending messages—it ensures clarity, correctness, and impact. ",
+      description: "Welcome to AI Email Assistant, your ultimate solution for crafting professional, error-free, and compelling emails.",
       details: "Technologies Used:\n- **Back-end**: Spring Boot (core logic, user authentication, email management)\n- **AI Integration**: DeepSeek-R1 AI (grammar correction, email rewriting)\n- **Email Service**: JavaMailSender (email delivery)\n- **Front-end**: ReactJS, Tailwind CSS",
       image: project4,
       livelink: "#",
@@ -58,8 +58,8 @@ const Work = () => {
   });
 
   return (
-    <div id='work' className="py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id='work' className="py-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <motion.h2
           ref={ref}
           initial={{ opacity: 0, y: 100 }}
@@ -69,7 +69,7 @@ const Work = () => {
         >
           My Work
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 ">
           {projects.map((project) => (
             <motion.div
               ref={ref}

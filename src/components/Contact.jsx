@@ -4,8 +4,8 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin,
 
 const Contact = () => {
   return (
-    <div id="contact" className="text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
+    <div id="contact" className="text-white py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-2">
         <motion.h2
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="mt-48 flex justify-center space-x-2 items-center p-5 text-white border-t-2 border-purple-500"
+        className="mt-11 flex justify-center space-x-2 items-center p-2 text-white border-t-2 border-purple-500"
       >
         <p>© 2025. All Rights Reserved</p>
         {/* <p>Soumojit Makar</p> */}

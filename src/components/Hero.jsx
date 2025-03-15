@@ -29,7 +29,7 @@ const Hero = () => {
     threshold: 0.2,
   });
   return (
-    <div className="text-white py-10">
+    <div className="text-white py-4">
       <motion.img
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
