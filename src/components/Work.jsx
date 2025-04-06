@@ -5,9 +5,11 @@ import Companies from "./Companies";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
+import project1 from "../assets/project1.png";
 import { FaGithub } from "react-icons/fa";
 import { FaEarthAsia } from "react-icons/fa6";
 import { ImImage } from "react-icons/im";
+import { p } from "motion/react-client";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -19,8 +21,8 @@ const Work = () => {
       id: 1,
       title: "Secure File Sharing App",
       description: "A secure and role-based file-sharing application built with Spring Boot, allowing users to upload, share, and access files with controlled permissions. Every file accessible for 24 h",
-      details: "Technologies Used:\n- Back-end : Spring Boot (core logic, file handling, expiration management)\n- Security : Spring Security (authentication & role-based access control)\n- API Documentation : OpenAPI (Swagger) for interactive API documentation\n- Database : MySQL (stores user data, file metadata, access permissions)",
-      image: null,
+      details: "Technologies Used:\n- Back-end : Spring Boot (core logic, file handling, expiration management)\n- Front-end : ReactJS, Tailwind CSS \n- Security : Spring Security (authentication & role-based access control)\n- API Documentation : OpenAPI (Swagger) for interactive API documentation\n- Database : MySQL (stores user data, file metadata, access permissions)",
+      image: project1,
       livelink: "#",
       githubLink: "https://github.com/Soumojit-Makar/File-Sharing-Application"
     },
